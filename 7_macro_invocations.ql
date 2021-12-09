@@ -1,5 +1,5 @@
 import cpp
 
 from MacroInvocation m
-where m.getParentInvocation().getMacroName() in ["ntohs", "ntohl", "ntohll"]
+where m.getParentInvocation().getMacroName().regexpMatch("nto[\\w]*")
 select m
